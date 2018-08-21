@@ -3,9 +3,9 @@ months = ["January", "Febuary", "March",
           "July", "August", "September",
           "November", "December"]
 
-msg = months
+msg = ""
 for i in range(len(months)):
-    if(not(i is 0)):
-        msg =+ ","
-    msg += i 
-    print(msg  + "months")
+    if (i != 0 ):
+        msg += "One month of the year is "
+    msg += str(months[i])
+print(msg + "") 
