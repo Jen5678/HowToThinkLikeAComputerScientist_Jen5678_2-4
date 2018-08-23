@@ -1,21 +1,24 @@
 import turtle
-def draw_multicolor_square(t, sz):
-    """Make turtle t draw a multi-color square of sz."""
-    for i in ["red", "purple", "hotpink", "blue"]:
-        t.color(i)
-        t.forward(sz)
-        t.left(90)
-wn = turtle.Screen()        # Set up the window and its attributes
-wn.bgcolor("lightgreen")
+w = turtle.Screen()
+w.bgcolor("Black")
+w.title("Chap4 - ex1")
+t = turtle.Turtle()
 
-tess = turtle.Turtle()      # Create tess and set some attributes
-tess.pensize(3)
+def makeSquare (t, colr, sz, w):
+    """ 
+        Set up a turtle with the given color and pensize,
+        that draws a square of length w, with a seperationspace of m.
+    """
+    t.color(colr)
+    t.pensize(sz)    
+    
+    for i in range(4):
+        t.forward(w)
+        t.right(90)
+    t.penup()    
+    t.forward(2*w)
+    t.pendown()
 
-size = 20                   # Size of the smallest square
-for i in range(70):
-    draw_multicolor_square(tess, size)
-    size = size + 10        # Increase the size for next time
-    tess.forward(10)        # Move tess along a little
-    tess.right(18)          #    and give her some turn
-
-wn.mainloop()
+for i in range (4):
+    makeSquare(t, "green", 3, 20)
+w.mainloop()
